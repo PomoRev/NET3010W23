@@ -1,12 +1,10 @@
+<!-- Example file with inline PHP code, will only run from back end. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Note that for Prof. Emanuel's labs the author and email meta tags are required on 
-    all HTML files submitted for labs and assignments.  -->
-
     <meta name="author" content="Prof. Frank Emanuel">
     <meta name="email" content="emanuef@algonquincollege.com">
     <meta name="date" content="2022-05-09">
@@ -15,14 +13,13 @@
     <title>HTML 5.0 Compliant Web Document</title>
 </head>
 <body>
-
-    <!-- Note that formatting is best relegated to CSS. What we do in HTML is semantic 
-    markup of the web document so that we can target semantic sections with our
-    CSS and JavaScript. A great naming convention is a form of natural commenting. -->
-
     <header>HTML 5.0 Compliant Web Document</header>
-    <p class="bodytext">Hello World.</p>
+
+    <!-- Note that PHP is run on the backend and requires a live web server like Apache. All 
+    PHP that runs will be removed from the webpage returned to the front end (browser) from
+    the web server.  -->
+
+    <p class="bodytext"><?php echo "Hello World from PHP!"; ?></p>
     <button onclick="helloWorld()">Click to have JS say hello</button>
-    
 </body>
 </html>
