@@ -1,4 +1,5 @@
 // Example of JavaScript bound to an HTML element
+// Prof. Frank Emanuel
 
 function helloWorld() {
 

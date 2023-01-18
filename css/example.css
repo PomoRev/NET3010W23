@@ -10,7 +10,7 @@
     colour of an element, I can ensure that my entire website has consistent
     colouring.  */
 
-    --pageBack: rgb(110 54 104);
+    --pageBack: rgb(110, 54, 104);
     --textBody: rgb(241, 241, 241);
     --textHeader: rgb(245, 113, 31);
     --justRight: center;
