@@ -24,3 +24,23 @@
     background-color: var(--button-background);
 
 }
+
+#keypad {
+
+    margin: 0 auto;
+
+}
+
+#keypad tr td {
+
+    border-color: var(--element-border);
+    border-style: outset;
+    border-radius: 25%;
+    border-spacing: 5px;
+
+    color: var(--text-colour);
+    background-color: bisque;
+
+
+
+}
