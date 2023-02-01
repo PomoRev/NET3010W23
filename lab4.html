@@ -6,6 +6,88 @@
     <meta name="author" content="Prof. Frank Emanuel">
     <meta name="email" content="emanuef@algonquincollege.com">
     <meta name="date" content="2023-02-01">
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14pt;
+        }
+
+        header {
+            text-align: center;
+            font-size: 20pt;
+            font-weight: bolder;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        main p {
+            text-align: left;
+            margin: 10px 30px;
+        }
+
+        footer {
+            text-align: right;
+        }
+
+        main img {
+            width: 80%;
+        }
+
+        nav {
+            text-align: center;
+            padding-left: 20px;
+        }
+
+        nav img {
+            height: 50px;
+            width: 50px;
+            transition: all 10ns;
+        }
+
+        nav img:hover {
+            transform: rotate(45deg);
+        }
+
+        #navbuttons {
+
+            display: flex;
+            margin: 5px auto;
+            flex-direction: column;
+            position: sticky;
+
+            width: 50%;
+
+        }
+
+        button {
+            background-color: blueviolet;
+            width: 100px;
+            font-size: 18pt;
+            border: solid black 3pt;
+        }
+
+        button:hover {
+            background-color: coral;
+        }
+
+        @media screen and (min-width: 500px){
+            
+            main {
+                background-color: chartreuse;
+            }
+
+            #navbuttons {
+
+                flex-direction: row;
+
+            }
+
+        }
+
+    </style>
     <title>CSS Lab</title>
 </head>
 <body>
@@ -13,6 +95,14 @@
     <main>
         <img src="./images/bridge-g15790c68c_640.jpg" 
              alt="crumbly bridge from pixabay">
+        <nav>
+            <div id="navbuttons">
+                <button>first</button>
+                <button>second</button>
+                <button>third</button>
+                <button>fourth</button>
+            </div>
+        </nav>
         <p class="bodytext">
             The bridge spanning a 100-foot gully stood in front of 
             him as the last obstacle blocking him from reaching his 
@@ -30,6 +120,10 @@
         <p class="footertext">
             (c) 2023 Frank Emanuel, Ph.D.
         </p>
+        <br>
+        <a target="_blank" href="https://icons8.com/icon/398/play">Play</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
     </footer>
 </body>
+
+
 </html>
