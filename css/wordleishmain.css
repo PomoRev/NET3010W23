@@ -3,33 +3,58 @@
 */
 
 body {
-    --background-colour: rgb(195, 129, 21);
+    --background-colour: rgb(21, 2, 98);
     --element-border: rgb(13, 13, 13); 
     --text-colour: rgb(2, 2, 155);
     --element-background:  rgb(201, 83, 83);
+    --button-background: rgb(80,148,76);
+    --button-hover: rgb(141, 227, 214);
+    --headnfoot-text: rgb(80,148,76);
 
-    background-color: var(--background-colour);
-    margin: 2% 10px;
-    border: var(--element-border) 3px solid;
-    padding: 1%;
+
+    margin: 10px;
 
     font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
 
+    background-color: var(--background-colour);
+
     font-size: 40pt;
     font-weight: bold;
+    padding: 5px 0 5px 30%;
 
-    color: var(--text-colour);
-    text-align: center;
+}
+
+header img {
+
+    width: 30%;
 
 }
 
 nav {
 
+    padding: 5px 15px;
+    background-color: var(--background-colour);
     font-size: 16pt;
     text-align: right;
+
+}
+
+nav button {
+
+    background-color: var(--button-background);
+    border: 1px var(--element-border) solid;
+    border-radius: 15px;
+
+    font-size: 12pt;
+
+}
+
+nav button:hover {
+
+    background-color: var(--button-hover);
 
 }
 
@@ -41,8 +66,22 @@ nav {
 
 footer {
 
-    background-color: var(--element-background);
+    background-color: var(--background-colour);
+    padding: 10px;
+
+    color: var(--headnfoot-text);
     text-align: center;
-    font-size: 14pt;
+    font-size: 18pt;
+    font-weight: bold;
+
+}
+
+main {
+
+    background-image: url(../images/sealighter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    padding: 10px auto;
 
 }

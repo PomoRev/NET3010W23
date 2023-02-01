@@ -1,1 +1,20 @@
 /* game interface, game board, animations for game elements */
+
+#gameboard, #gameboard td {
+
+    border-spacing: 0;
+    border: 2px solid;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: bisque;
+    margin: 0px auto;
+
+}
+
+#gameboard td {
+
+    min-width: 18pt;
+    min-height: 18pt;
+
+}
