@@ -5,16 +5,22 @@
     border-spacing: 0;
     border: 2px solid;
     text-align: center;
-    font-size: 14pt;
+    font-size: 20pt;
     font-weight: bold;
     background-color: bisque;
     margin: 0px auto;
 
 }
 
-#gameboard td {
+#gameboard tr td {
 
-    min-width: 18pt;
-    min-height: 18pt;
+    width: 28pt;
+    height: 28pt;
+
+}
+
+#row1 {
+
+    background-color: var(--button-background);
 
 }
