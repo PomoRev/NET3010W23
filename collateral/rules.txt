@@ -5,3 +5,12 @@ A correct letter in the wrong place turns yellow.
 An incorrect letter turns gray.
 Letters can be used more than once.
 Answers are never plurals.
+
+rewrite of rules:
+
+You have six attempts to guess the mystery word.
+You can only guess words that Wordleish knows.
+A correct letter in the correct place is highlighted green.
+A correct letter in the wrong place is highlighted yellow.
+An incorrect letter is turned gray on the keypad.
+Letters can be used more than once in a word.
