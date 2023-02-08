@@ -3,15 +3,18 @@
 */
 
 body {
-    --background-colour: rgb(21, 2, 98);
+    --background-colour: rgb(32, 11, 117);
     --element-border: rgb(13, 13, 13); 
     --text-colour: rgb(2, 2, 155);
-    --element-background:  rgb(201, 83, 83);
+    --element-background:  rgb(157, 209, 235);
     --button-background: rgb(80,148,76);
     --button-hover: rgb(141, 227, 214);
     --headnfoot-text: rgb(80,148,76);
 
-
+    --green-text: rgb(46, 194, 39);
+    --yellow-text: rgb(252, 252, 44);
+    --gray-text: rgb(108, 107, 107);
+    
     margin: 10px;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -20,9 +23,13 @@ body {
 header {
 
     background-color: var(--background-colour);
+    color: var(--headnfoot-text);
 
-    font-size: 40pt;
+    font-size: 24pt;
     font-weight: bold;
+    font-family: "Seaweed Script", serif;
+    text-shadow: var(--element-background) 2px 2px 3px;
+
     padding: 5px 0 5px 30%;
 
 }
@@ -60,7 +67,54 @@ nav button:hover {
 
 #instructions {
 
-    visibility: hidden;
+    width: 400px;
+    padding: 10px;
+
+    border: var(--element-border) 3pt solid;
+    border-radius: 15px;
+    background-color: var(--element-background);
+
+    font-size: 16pt;
+
+    position: fixed;
+    right: -380px;
+    top: 200px;
+
+    transition: all 1000ms;
+
+}
+
+#instructions h2 {
+
+    font-size: 18pt;
+    font-weight: bold;
+    padding: 2px;
+    margin: 0;
+}
+
+#instructions:hover {
+
+    right: 10px;
+}
+
+.greentext {
+
+    color: var( --green-text );
+}
+
+.yellowtext {
+
+    color: var( --yellow-text );
+}
+
+.graytext {
+
+    color: var( --gray-text );
+}
+
+.graytext, .yellowtext, .greentext {
+
+    font-weight: bold;
 
 }
 
@@ -83,5 +137,12 @@ main {
     background-size: cover;
     
     padding: 30px;
+
+}
+
+#feedback {
+
+    font-size: 24pt;
+    height: 26pt;
 
 }

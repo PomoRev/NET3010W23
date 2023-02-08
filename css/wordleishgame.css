@@ -1,5 +1,10 @@
 /* game interface, game board, animations for game elements */
 
+body {
+
+    --interface-text: rgb(34, 28, 28);
+}
+
 #gameboard, #gameboard td {
 
     border-spacing: 0;
@@ -28,19 +33,33 @@
 #keypad {
 
     margin: 0 auto;
+    background-color: var(--interface-text);
+    border-radius: 15pt;
+    padding: 10px 12px;
+    margin-top: 10px;
 
 }
 
 #keypad tr td {
 
-    border-color: var(--element-border);
-    border-style: outset;
-    border-radius: 25%;
+    background-image: url(../images/keycap\(219x219\).png);
+    background-size: cover;
+    
     border-spacing: 5px;
 
-    color: var(--text-colour);
-    background-color: bisque;
+    color: var(--interface-text);
 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+    width: 1.5em;
+    height: 1.5em;
 
+}
 
+.emptykey {
+
+    visibility: hidden;
 }

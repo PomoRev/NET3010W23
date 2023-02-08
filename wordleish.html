@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="./css/wordleishmain.css">
     <link rel="stylesheet" href="./css/wordleishgame.css">
     <title>Worlde-ish</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Seaweed+Script">
 </head>
 <body>
-    <header><img src="./images/wordlish.png" alt="Wordle Fish logo"></header>
+    <header>
+        <img src="./images/wordlish.png" alt="Wordle Fish logo">
+        Swimming in the logorrhea of life...
+    </header>
+    
     <nav>
         <button id="reset">reset game</button>
     </nav>
@@ -19,7 +24,7 @@
         <div id="game">
             <table id="gameboard">
                 <tr id="row1">
-                    <td>A</td>
+                    <td></td>
                     <td> </td>
                     <td> </td>
                     <td> </td>
@@ -55,6 +60,9 @@
                 </tr>
             </table>
         </div>
+        <div id="feedback">
+
+        </div>
         <div id="keyboard">
             <table id="keypad">
                 <tr>
@@ -79,10 +87,10 @@
                     <td>J</td>
                     <td>K</td>
                     <td>L</td>
-                    <td></td>
+                    <td class="emptykey"></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td class="emptykey"></td>
                     <td>Z</td>
                     <td>X</td>
                     <td>C</td>
@@ -90,18 +98,30 @@
                     <td>B</td>
                     <td>N</td>
                     <td>M</td>
-                    <td colspan="2">DEL</td>
+                    <td class="emptykey"></td>
+                    <td>&lt;</td>
                 </tr>
             </table>
         </div>
         <div id="instructions">
-            You have to guess the Wordle in six goes or less.
-            Every word you enter must be in the word list. ...
-            A correct letter turns green.
-            A correct letter in the wrong place turns yellow.
-            An incorrect letter turns gray.
-            Letters can be used more than once.
-            Answers are never plurals.
+            <h2>Instructions</h2>
+            <ul>
+                <li>You have six attempts to guess the mystery word.</li>
+                <li>You can only guess words that Wordleish knows.</li>
+                <li>
+                    A correct letter in the correct place is 
+                    highlighted <span class="greentext">green</span>.
+                </li>
+                <li>
+                    A correct letter in the wrong place is 
+                    highlighted <span class="yellowtext">yellow</span>.
+                </li>
+                <li>
+                    An incorrect letter is turned 
+                    <span class="graytext">gray</span> on the keypad.
+                </li>
+                <li>Letters can be used more than once in a word.</li>
+            </ul>
         </div>
     </main>
     <footer>
