@@ -19,6 +19,7 @@
 				display: flex;
 				background: blue;
 				flex-direction: column;
+				width: 40%;
 			}	
 			
 			div[class^="tbox"] {
@@ -34,7 +35,7 @@
 			.picturegallery {
 				display: flex;
 				flex-flow: row wrap;
-				justify-content: flex-end;
+				justify-content: space-evenly;
 			}
 					
 			.image {
@@ -42,7 +43,11 @@
 				padding: 2px;
 				margin: 2px;
 				width: 100px;
-			}			
+			}	
+			
+			.tboxb {
+				order: 1;
+			}
 		</style>
 		<title>Lecture 4 flex examples</title>
 	</head>

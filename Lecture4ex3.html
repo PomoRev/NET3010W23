@@ -11,7 +11,7 @@
 				grid-template-areas : 	"head head head"
 										"nav image image"
 										"nav content content"
-										"footer footer footer";
+										"nav . footer";
 				grid-template-columns : 1fr 3fr 3fr;
 			}
 
@@ -47,8 +47,6 @@
 				padding: 5px 18pt;
 			}
 
-
-			
 			.image {
 				grid-area : image;
 				justify-self : center;
@@ -61,6 +59,19 @@
 				justify-self: right;
 
 				font-style: italic;
+				width: 100%;
+			}
+
+			@media screen and (max-width: 600px) {
+				.gridcontainer {
+
+					grid-template-areas : 	"head head"
+											"image image"
+											"nav nav"
+											"content content" 
+											". footer";
+					grid-template-columns : 3fr 2fr;
+				}
 			}
 			
 		</style>
