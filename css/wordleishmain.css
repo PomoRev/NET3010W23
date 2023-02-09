@@ -28,7 +28,7 @@ header {
     font-size: 24pt;
     font-weight: bold;
     font-family: "Seaweed Script", serif;
-    text-shadow: var(--element-background) 2px 2px 3px;
+    text-shadow: var(--element-border) 2px 2px 3px;
 
     padding: 5px 0 5px 30%;
 
