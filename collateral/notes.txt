@@ -1,2 +1,67 @@
 https://fonts.googleapis.com/css?family=Seaweed+Script
 
+
+Game Logic (From the white board)
+
+Setup Game
+    
+    reset keyboard
+    clear gameboard
+    clear feedback
+
+    setup environment
+        choose and remember target word from list
+        set line to first line
+        set guess to empty string
+
+
+Click Reset Game
+
+    run 'Setup Game'
+
+
+Click or Press backspace
+
+    if length of guess > 1 
+        remove last letter from guess
+        erase last letter from screen
+
+
+Click of Press letter
+
+    if length of guess < 6
+        add letter to end of guess
+        display letter in box
+
+
+Click or Press enter
+
+    if length of guess == 5
+        check if guess == target word
+            congratulate user telling them their score as number of guesses (lines)
+        otherwise 
+            if guess is not in word list
+                tell user that their choice is not a recognized word
+                delete guess
+                erase current line from board
+            else
+                set number in right position to 0
+                set number right letters to 0
+                set all letters to gray
+                check for correct letters in right position
+                    make letters green
+                    add to count of right letters and in right position
+                check other letters if they are in the word
+                    make letters in word yellow
+                    add to count of right letters
+                create a message: you have # correct letters and # of them are in the right position
+
+
+
+
+
+
+
+    
+
+
