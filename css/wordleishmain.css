@@ -36,7 +36,7 @@ header {
 
 header img {
 
-    width: 30%;
+    width: 25%;
 
 }
 
@@ -144,5 +144,10 @@ main {
 
     font-size: 24pt;
     height: 26pt;
+    text-align: center;
 
+}
+
+#feedbacktext {
+    background-color: cadetblue;
 }

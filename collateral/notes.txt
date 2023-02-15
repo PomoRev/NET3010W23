@@ -5,7 +5,7 @@ Game Logic (From the white board)
 
 Setup Game
     
-    reset keyboard
+    clear keyboard
     clear gameboard
     clear feedback
 

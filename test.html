@@ -23,9 +23,17 @@
             margin: 20px auto;
         }
     </style>
+    <script>
+        function keyPress(event) {
+            input.innerText += event.key;
+        }
+
+        document.addEventListener('keydown', keyPress);
+    </script>
 </head>
 <body>
     <header>DOM Traversal and Event Listener Page</header>
     <p id="input"></p>
+    <button onclick="document.removeEventListener('keydown', keyPress);">Turn off Listener</button>
 </body>
 </html>
