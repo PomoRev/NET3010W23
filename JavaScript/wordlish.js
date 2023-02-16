@@ -1,15 +1,11 @@
 // global variables
 
-let currentLetter;
-
-function keyBind(element) {
-    currentLetter = element.innerText;
-    alert( "from screen " + currentLetter);
+function keyBind(letter) {
+    alert("boo " + letter);
 }
 
 function keyPress(event){
-    currentLetter = event.key;
-    alert( "from keyboard " + currentLetter);
+    keyBind(event.key.toUpperCase());
 }
 
 function setUpGame(){
@@ -26,15 +22,10 @@ function setUpGame(){
 
     for (const keyToReset of onScreenKeyboard) {
 
-        // clear out old instance of listener
-
-        keyToReset.removeEventListener('onclick', keyBind);
-
         // restore keypad element to original state
 
         keyToReset.style.color = "var(--interface-text)";
-        keyToReset.addEventListener('onclick', keyBind);
-        
+
     }
 
     // clear gameboard
