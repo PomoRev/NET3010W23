@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>DOM Experiments</TITLE>
+	</HEAD>
+	<BODY id="main">
+		<H1>What Kind of Monkey?</H1>
+		<IMG class="monkey" src="./images/monkey1.jpg" width="200">
+		<IMG class="monkey" src="./images/monkey2.jpg" width="200">
+		<IMG class="monkey" src="./images/monkey3.jpg" width="200">
+		<IMG class="monkey" src="./images/monkey4.jpg" width="200">
+		<SCRIPT>
+	
+			var currentImage = 0;
+			cycle();		
+
+			// cycle through the images
+			function cycle(){
+				let pics = document.getElementsByClassName("monkey");
+				for (pic of pics){
+					pic.style.display = "none";
+				}
+					
+				if (currentImage == pics.length){
+					currentImage = 0; 
+				}
+				
+				pics[currentImage++].style.display = "block";
+
+
+				setTimeout( cycle, 4000);
+			}
+						
+		</SCRIPT>
+	</BODY>
+</HTML>

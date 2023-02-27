@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>DOM Experiments</TITLE>
+	</HEAD>
+	<BODY>
+		<H1>You know you want to click this</H1>
+		<A id="somelink" href="https://www.w3schools.com/">tutorials</A>
+		<BR>
+		<A id="someotherlink" href="http://www.librarything.com/catalog/pomorev/yourlibrary">my books</A>
+		<BR>
+		<A href="https://watch.lolesports.com/home">the games</A>
+		<BR>
+		<HR>
+		<SCRIPT>
+			// var url = document.links.somelink.href;
+			// url = someotherlink.href;
+			url = 
+				document.getElementById('somelink').href;
+			document.write('The URL is: ' + url + '<BR>');
+			
+			urls = document.links;
+		
+			for (url of urls){
+				document.writeln('-> ' + url.href + '<BR>');
+			}	
+
+
+			for (let i = 0; i < document.links.length; i++){
+				document.writeln ('#' + (i + 1) + ' ' + document.links[i].href + 'link ' + '<BR>');	
+			}
+
+			// add a foreach loop example
+
+		</SCRIPT>
+	</BODY>
+</HTML>

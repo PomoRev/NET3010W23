@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>DOM Experiments</TITLE>
+	</HEAD>
+	<BODY id="main">
+		<H1>You know you want to click this</H1>
+		<A id="somelink" href="https://www.w3schools.com/">tutorials</A>
+		<BR>
+		<SCRIPT>
+		
+			let url = document.links.somelink.href;
+			let newelement = document.createElement("h2");
+			document.getElementById("main").appendChild(newelement);
+			newelement.innerHTML = url;
+			
+		</SCRIPT>
+	</BODY>
+</HTML>
