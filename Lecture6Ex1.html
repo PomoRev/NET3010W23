@@ -9,7 +9,10 @@
 		<BR>
 		<SCRIPT>
 			url = document.links.somelink.href;
-			document.write('The URL is: ' + url);
+			document.writeln('The URL is: ' + url + '<br>');
+
+			numberOfUrls = document.links.length;
+			document.write('We have ' + numberOfUrls + ' links');
 		</SCRIPT>
 	</BODY>
 </HTML>

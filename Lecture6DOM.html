@@ -75,11 +75,16 @@
     <script>
 
         function grab (colour) {
-            document.getElementById('textbox').value = document.getElementById(colour).innerText;
+            document.getElementById('textbox').value = 
+                document.getElementById(colour).innerText;
         }
 
         function writetext (colour) {
-            document.getElementById(colour).innerText = document.getElementById('textbox').value;
+
+            // change to innerHTML and see what is different.
+
+            document.getElementById(colour).innerText = 
+                document.getElementById('textbox').value;
         }
 
     </script>
@@ -112,6 +117,18 @@
             Click the write button to put text into an area.
             Enter text into the field.
         </p>
+
+
+
+        <!-- <p id="sometext">
+            ???
+        </p>
+
+        <script>
+            sometext.innerHTML = "<a href=''>somelink</a>";
+        </script> -->
+
+
     </div>
 </body>
 </html>

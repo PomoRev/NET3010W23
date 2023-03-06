@@ -23,6 +23,7 @@
 		
 			for (url of urls){
 				document.writeln('-> ' + url.href + '<BR>');
+				url.style.fontWeight = 'bold';
 			}	
 
 
@@ -30,7 +31,11 @@
 				document.writeln ('#' + (i + 1) + ' ' + document.links[i].href + 'link ' + '<BR>');	
 			}
 
-			// add a foreach loop example
+			// urls.forEach( function( url ){
+			//  	document.writeln ( '* ' + url.href + '<br>' );});
+
+			// add a foreach loop example we will fix later
+			// does not work on HTML collections, just pure arrays.
 
 		</SCRIPT>
 	</BODY>
