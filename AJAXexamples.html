@@ -17,17 +17,17 @@
 
   // this is how we used to account for MicroSoft's Internet Explorer
 
-  function asynchRequestOld(){
-    try { var request = new XMLHttpRequest(); }
-    catch (e1){
-      try { var request = new ActiveXObject("Msxml2.XMLHTTP"); }
-      catch (e2){
-        try { request = new ActiveXObject("Microsoft.XMLHTTP"); }
-        catch (e3) { request = false; }	
-      }
-    }
-    return request;	
-  }
+  // function asynchRequestOld(){
+  //   try { var request = new XMLHttpRequest(); }
+  //   catch (e1){
+  //     try { var request = new ActiveXObject("Msxml2.XMLHTTP"); }
+  //     catch (e2){
+  //       try { request = new ActiveXObject("Microsoft.XMLHTTP"); }
+  //       catch (e3) { request = false; }	
+  //     }
+  //   }
+  //   return request;	
+  // }
 
   // fetch is the modern way to request data from web servers 
   // however this will not work unless there is a server and we have permission.
@@ -36,9 +36,13 @@
 
   let dataFile = "readme.txt";
 
-  fetch(dataFile)
-    .then ((fileContent) => fileContent.text())
-    .then ( parsedFile => placeholder.innerText = parsedFile);
+  fetch(dataFile, { 
+    method: "GET",
+    credentials: "same-origin",
+    mode:"no-cors",  
+    }).catch ((response) => placeholder.innerText = "oh no!")
+      .then ((fileContent) => fileContent.text())
+      .then ( parsedFile => placeholder.innerText = parsedFile);
 
 
 </script>
