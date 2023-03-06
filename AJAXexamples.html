@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Prof. Frank Emanuel">
+    <meta name="email" content="emanuef@algonquincollege.com">
+    <meta name="date" content="2023-03-05">
+    <title>Some Doc</title>
+</head>
+<body>
+    <header>Some Doc</header>
+    <p id="placeholder">Will this change?</p>
+</body>
+
+<script>
+
+  // this is how we used to account for MicroSoft's Internet Explorer
+
+  function asynchRequestOld(){
+    try { var request = new XMLHttpRequest(); }
+    catch (e1){
+      try { var request = new ActiveXObject("Msxml2.XMLHTTP"); }
+      catch (e2){
+        try { request = new ActiveXObject("Microsoft.XMLHTTP"); }
+        catch (e3) { request = false; }	
+      }
+    }
+    return request;	
+  }
+
+  // fetch is the modern way to request data from web servers 
+  // however this will not work unless there is a server and we have permission.
+  // Just a reminder that if you want to implement something like a REST api then
+  // you will need to modify your installation of Apache.
+
+  let dataFile = "readme.txt";
+
+  fetch(dataFile)
+    .then ((fileContent) => fileContent.text())
+    .then ( parsedFile => placeholder.innerText = parsedFile);
+
+
+</script>
+
+</html>
+
+

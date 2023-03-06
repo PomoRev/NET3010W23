@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Prof. Frank Emanuel">
+        <meta name="email" content="emanuef@algonquincollege.com">
+        <meta name="date" content="2022-04-04">
+        <link rel="stylesheet" href="general.css">
+        <script src="ajax.js"></script>
+        <title>AJAX Demonstration</title>
+    </head>
+    <body>
+        <header>AJAX Demonstration</header>
+
+        <div id="weatherbox">
+            <img src="images/icons8-sun-96.png" alt="image reflecting the weather">
+            <div class="content" id="weathertext">
+            </div>
+        </div>
+
+        <div class="content centered">
+            <label class="content" for="city">Change city:</label>
+            <select class="selection" id="selectcity" onchange="getWeather();" >
+                <option value="Ottawa,CA" selected="selected">Ottawa</option>
+                <option value="Fort%20Worth">Fort Worth</option>
+                <option value="Memphis">Memphis</option>
+                <option value="Orlando">Orlando</option>
+                <option value="Los%20Angeles">Lost Angeles</option>
+                <option value="London,UK">London</option>
+                <option value="Val-Des-Monts,CA">Perkins</option>
+                <option value="Kathmandu,NP">Kathmandu</option>
+            </select>
+        </div>
+
+        <script>getWeather();</script>
+
+    </body>
+</html>
