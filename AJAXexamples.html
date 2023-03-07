@@ -39,7 +39,7 @@
   fetch(dataFile, { 
     method: "GET",
     credentials: "same-origin",
-    mode:"no-cors",  
+    mode:"no-cors" 
     }).catch ((response) => placeholder.innerText = "oh no!")
       .then ((fileContent) => fileContent.text())
       .then ( parsedFile => placeholder.innerText = parsedFile);
