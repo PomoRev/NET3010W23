@@ -1,6 +1,7 @@
 // global variables
 
-let targetWord = null, currentLine = 0, currentGuess = null;
+const NUMBERGUESSES = 5;
+let targetWord = null, currentLine = 0, currentGuess = "";
 
 const wordList = { "words": 
     ["aback","abase","abate","abaya","abbey","abbot","abets","abhor","abide","abode","abort","about","above","abuse","abuts","abyss","ached","aches","acids","acing","ackee","acorn","acres","acrid","acted","actin","actor","acute","adage","adapt","added","adder","addle","adept","adieu","adios","adits","adman","admin","admit","adobe","adobo","adopt","adore","adorn","adult","adzes","aegis","aeons","aerie","affix","afire","afoot","afore","after","again","agape","agate","agave","agent","aggro","agile","aging","aglow","agony","agora","agree","ahead","ahold","aided","aider","aides","ailed","aimed","aimer","aioli","aired","aisle","alarm","album","alder","aleph","alert","algae","algal","alias","alibi","alien","align","alike","alive","alkyd","alkyl","allay","alley","allot","allow","alloy","allyl","aloes","aloft","aloha","alone","along","aloof","aloud","alpha","altar","alter","altos","alums","amass","amaze","amber","ambit","amble","ambos","amend","amide","amine","amino","amiss","amity","amnio","among","amour","amped","ample","amply","amuse","ancho","angel","anger","angle","angry","angst","anima","anime","anion","anise","ankle","annas","annex","annoy","annul","anode","anole","antic","antis","antsy","anvil","aorta","apace","apart","aphid","apnea","apple","apply","apron","apses","apter","aptly","aquas","arbor","ardor","areal","areas","areca","arena","argon","argot","argue","argus","arias","arils","arise","armed","armor","aroma","arose","array","arrow","arses","arson","artsy","asana","ascot","ashen","ashes","aside","asked","asker","askew","aspen","aspic","assay","asses","asset","aster","astir","asura","atlas","atman","atoll","atoms","atone","atopy","attic","audio","audit","auger","aught","augur","aunts","aunty","aural","auras","autos","auxin","avail","avers","avert","avian","avoid","avows","await","awake","award","aware","awash","awful","awoke","axels","axial","axils","axing","axiom","axion","axles","axons","azide","azole","azure",
@@ -35,14 +36,92 @@ function keyBind(letter) {
    
     // check if we are wanting input from the user (use short circuit)
 
-    if (( currentLine > 5) || (targetWord == null)) return;
+    if (( currentLine > (5 * NUMBERGUESSES)) || (targetWord == null)) return;
+    
+    const guessBoxes = document.querySelectorAll("#gameboard tr td");
 
-    console.log( "my word " + targetWord );
+    if ( letter == 'BACKSPACE'){
+
+        console.log("backspace detected");
+
+        // if length of guess > 1 
+
+        if (currentGuess.length > 0){
+            // remove last letter from guess
+
+            currentGuess = currentGuess.slice(0, -1);
+
+            // erase last letter from screen
+
+            guessBoxes[--currentLine].innerText = "";
+
+        }
+
+
+    } else if (letter == 'ENTER') {
+
+        console.log("enter detected");
+
+        if (currentGuess.length == 5) {
+
+            // check if guess == target word
+            
+            if (currentGuess === targetWord.toUpperCase()){
+
+                tempPosition = currentLine - 5;
+
+                for ( i = 0; i < 5; i++){                   
+                    guessBoxes[tempPosition++].style.background-color("var(--green-text)");
+                }
+
+            }
+            //     congratulate user telling them their score as number of guesses (lines)
+            // otherwise 
+            //     if guess is not in word list
+            //         tell user that their choice is not a recognized word
+            //         delete guess (memory)
+            //         erase current line from board
+            //     else
+            //         set number in right position to 0
+            //         set number right letters to 0
+            //         set all letters to gray
+            //         check for correct letters in right position
+            //             make letters green
+            //             add to count of right letters and in right position
+            //         check other letters if they are in the word
+            //             make letters in word yellow
+            //             add to count of right letters
+            //         create a message: you have # correct letters and # of them are in the right position
+    
+
+        }
+
+    } else if ((letter >= 'A') && (letter <= 'Z')) {      
+
+    // if length of guess < 6
+
+    console.log(letter + " detected");
+
+        if (currentGuess.length < 5) {
+
+        // add letter to end of guess
+
+            currentGuess += letter;    
+
+            // display letter in box
+
+            guessBoxes[currentLine++].innerText = letter;
+
+        }
+
+    }
     
 }
 
 function keyPress(event){
     keyBind(event.key.toUpperCase());
+
+    console.log(" pressed: " + event.key.toUpperCase());
 }
 
 function setUpGame(){
@@ -53,10 +132,10 @@ function setUpGame(){
     document.addEventListener('keydown', keyPress);
 
     // reset the keypad 
-   
+
     let onScreenKeyboard = 
         document.querySelectorAll("#keypad tr td");
-
+   
     for (const keyToReset of onScreenKeyboard) {
 
         // restore keypad element to original state
@@ -83,13 +162,13 @@ function setUpGame(){
 
     targetWord = wordList.words[Math.floor(Math.random() * (wordList.words.length))];
 
-    // set line to first line
+    // set line to first line add the size of the guess each time
 
     currentLine = 0;
 
     // set guess to empty string
 
-    currentGuess = null;
+    currentGuess = "";
 
 }
 
