@@ -71,8 +71,10 @@ function keyBind(letter) {
                 tempPosition = currentLine - 5;
 
                 for ( i = 0; i < 5; i++){                   
-                    guessBoxes[tempPosition++].style.background-color("var(--green-text)");
+                    guessBoxes[tempPosition++].style.backgroundColor = "var(--green-text)";
                 }
+
+                targetWord = null;
 
             }
             //     congratulate user telling them their score as number of guesses (lines)
@@ -151,6 +153,7 @@ function setUpGame(){
 
     for (const boxToClear of gameBoard) {
         boxToClear.innerText = "";
+        boxToClear.style.backgroundColor = "bisque";
     }
 
     // clear feedback
