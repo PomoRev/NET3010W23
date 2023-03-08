@@ -76,8 +76,11 @@ function keyBind(letter) {
 
                 targetWord = null;
 
+                feedbacktext.innerText = "Winner in " + currentLine/5 + 
+                    " turn" + (((currentLine/5) > 1) ? "s!" : "!");
+
             }
-            //     congratulate user telling them their score as number of guesses (lines)
+
             // otherwise 
             //     if guess is not in word list
             //         tell user that their choice is not a recognized word
@@ -94,7 +97,7 @@ function keyBind(letter) {
             //             make letters in word yellow
             //             add to count of right letters
             //         create a message: you have # correct letters and # of them are in the right position
-    
+
 
         }
 
