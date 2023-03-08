@@ -45,41 +45,41 @@ function keyBind(letter) {
         console.log("backspace detected");
 
         // if length of guess > 1 
-
         if (currentGuess.length > 0){
             // remove last letter from guess
-
             currentGuess = currentGuess.slice(0, -1);
 
             // erase last letter from screen
-
             guessBoxes[--currentLine].innerText = "";
 
         }
 
 
-    } else if (letter == 'ENTER') {
+    } else if ((letter == 'ENTER') 
+                && (currentGuess.length == 5)) {
 
-        console.log("enter detected");
+        // check if guess is the word we are looking for          
+        if (currentGuess === targetWord.toUpperCase()){
 
-        if (currentGuess.length == 5) {
+            tempPosition = currentLine - 5;
 
-            // check if guess == target word
-            
-            if (currentGuess === targetWord.toUpperCase()){
-
-                tempPosition = currentLine - 5;
-
-                for ( i = 0; i < 5; i++){                   
-                    guessBoxes[tempPosition++].style.backgroundColor = "var(--green-text)";
-                }
-
-                targetWord = null;
-
-                feedbacktext.innerText = "Winner in " + currentLine/5 + 
-                    " turn" + (((currentLine/5) > 1) ? "s!" : "!");
-
+            for ( i = 0; i < 5; i++){                   
+                guessBoxes[tempPosition++].style.backgroundColor 
+                    = "var(--green-text)";
             }
+
+            targetWord = null;
+
+            feedbacktext.innerText = "Winner in " + currentLine/5 + 
+                " turn" + (((currentLine/5) > 1) ? "s!" : "!");
+
+        } else {
+
+            console.log( "not the rigth answer " );
+
+            currentGuess = "";
+
+            if (currentLine > ((5 * NUMBERGUESSES) - 1)) targetWord = null;
 
             // otherwise 
             //     if guess is not in word list
@@ -98,26 +98,22 @@ function keyBind(letter) {
             //             add to count of right letters
             //         create a message: you have # correct letters and # of them are in the right position
 
-
         }
 
-    } else if ((letter >= 'A') && (letter <= 'Z')) {      
 
-    // if length of guess < 6
 
-    console.log(letter + " detected");
+        } else if ((letter.length == 1) && (letter >= 'A') && (letter <= 'Z')) {      
 
-        if (currentGuess.length < 5) {
+            // if you still have room for letters
+            if (currentGuess.length < 5) {
 
-        // add letter to end of guess
+                // add letter to end of guess
+                currentGuess += letter;    
 
-            currentGuess += letter;    
+                // display letter in box
+                guessBoxes[currentLine++].innerText = letter;
 
-            // display letter in box
-
-            guessBoxes[currentLine++].innerText = letter;
-
-        }
+            }
 
     }
     
