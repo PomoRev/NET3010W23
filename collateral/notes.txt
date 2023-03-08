@@ -42,7 +42,7 @@ Click or Press enter
         otherwise 
             if guess is not in word list
                 tell user that their choice is not a recognized word
-                delete guess
+                delete guess (memory)
                 erase current line from board
             else
                 set number in right position to 0
