@@ -1,6 +1,6 @@
 // global variables
 
-const NUMBERGUESSES = 5;
+const NUMBERGUESSES = 6;
 let targetWord = null, currentLine = 0, currentGuess = "";
 
 const wordList = { "words": 
